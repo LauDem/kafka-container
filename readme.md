@@ -1,7 +1,7 @@
 cd kafka-container
 
 
-//start kafka container
+#start kafka container
 docker-compose up -d
 
 
@@ -11,6 +11,9 @@ docker ps
 
 //to enter the container CLI
 docker-compose exec kafka bash
+
+//create topics
+docker-compose exec broker kafka-topics --create --topic example-topic --bootstrap-server broker:9092 --replication-factor 1 --partitions 1
 
 
 //produce messages
