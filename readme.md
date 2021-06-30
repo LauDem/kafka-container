@@ -9,7 +9,7 @@ Not recommanded for production
 > docker-compose up -d
 
 Be sure to execute this command on the same path where the docker-compose file is located :
-> cd kafka-container
+> cd ~/path/to/cloned/kafka-container
 
 
 ### check all containers are spinned up
