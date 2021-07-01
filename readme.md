@@ -20,13 +20,22 @@ Be sure to execute this command on the same path where the docker-compose file i
 > docker-compose exec kafka bash
 
 ### create topics
-> docker-compose exec broker kafka-topics --create --topic example-topic --bootstrap-server broker:9092 --replication-factor 1 --partitions 1
+> kafka-topics --create --topic example-topic --bootstrap-server kafka:9092 --replication-factor 1 --partitions 1
+
+### list all topics
+```
+kafka-topics --list --zookeeper zookeeper:2181
+```
 
 
 ### produce messages
-> kafka-console-producer --topic mockup-topic-for-poc --bootstrap-server kafka:9092 \
+> kafka-console-producer --topic example-topic --bootstrap-server kafka:9092 \
 >  --property parse.key=true \
 >  --property key.separator=":"
+
+kafka-console-producer --topic example-topic --bootstrap-server kafka:9092 \
+ --property parse.key=true \
+ --property key.separator=":"
   
 
 ### consume messages
